@@ -1,32 +1,32 @@
-module.exports = function(config) {
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+
+module.exports = function (config) {
   config.set({
-    basePath: '',
-    frameworks: ['source-map-support', 'browserify', 'jasmine'],
-    files: [
-      './test.js'
-    ],
+    basePath: "",
+    frameworks: ["source-map-support", "browserify", "jasmine"],
+    files: ["./test.js"],
     preprocessors: {
-      '*.js': ['browserify']
+      "*.js": ["browserify"],
     },
     browserify: {
       debug: true,
-      external: ['angular', 'angular-mocks'],
-      extensions: ['.js'],
-      transform: ['rollupify']
+      external: ["angular", "angular-mocks"],
+      extensions: [".js"],
+      transform: ["rollupify"],
     },
-    reporters: ['mocha'],
+    reporters: ["mocha"],
     port: 9876,
     colors: true,
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_WARN,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ["Chrome"],
     singleRun: false,
     concurrency: Infinity,
     browserConsoleLogOptions: {
-      level: 'log',
-      terminal: true
+      level: "log",
+      terminal: true,
     },
-    browserDisconnectTolerance: 30
-  })
-}
+    browserDisconnectTolerance: 30,
+  });
+};
